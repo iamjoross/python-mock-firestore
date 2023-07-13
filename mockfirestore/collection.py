@@ -13,7 +13,10 @@ class CollectionReference:
         self._data = data
         self._path = path
         self.parent = parent
-        self.id = path[0]
+
+    @property
+    def id(self):
+        return self._path[-1]
 
     def document(self, document_id: Optional[str] = None) -> DocumentReference:
         collection = get_by_path(self._data, self._path)
