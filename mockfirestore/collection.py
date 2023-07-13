@@ -7,7 +7,7 @@ from mockfirestore.query import Query
 from mockfirestore.document import DocumentReference, DocumentSnapshot
 
 
-class CollectionReference:
+class CollectionReference(object):
     def __init__(self, data: Store, path: List[str],
                  parent: Optional[DocumentReference] = None) -> None:
         self._data = data
